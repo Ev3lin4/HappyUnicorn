@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class TapController : MonoBehaviour
+public class Unicorn : MonoBehaviour
 {
 
     public delegate void PlayerDelegate();
@@ -13,7 +13,7 @@ public class TapController : MonoBehaviour
     public static event PlayerDelegate OnPlayerScored;
 
     public float tapForce = 10; 
-    public float tiltSmooth = 5;
+    public float tiltSmooth = 5; 
     public Vector3 startPos;
 
     private Rigidbody2D rigidbody;

@@ -10,7 +10,7 @@ public class HighscoreText : MonoBehaviour
 
     private void OnValidate()
     {
-        highscore ??= GetComponent<Text>();
+        highscore = highscore == null ? GetComponent<Text>() : highscore;
     }
     
     private void Awake() 

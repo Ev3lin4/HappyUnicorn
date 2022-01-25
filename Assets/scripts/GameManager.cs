@@ -37,21 +37,21 @@ public class GameManager : MonoBehaviour
     private void OnEnable() 
     {
         CountdownText.OnCountdownFinished += OnCountdownFinished;
-        TapController.OnPlayerDied += OnPlayerDied;
-        TapController.OnPlayerScored += OnPlayerScored;
+        Unicorn.OnPlayerDied += OnPlayerDied;
+        Unicorn.OnPlayerScored += OnPlayerScored;
     }
 
     private void OnDisable() 
     {
         CountdownText.OnCountdownFinished -= OnCountdownFinished;
-        TapController.OnPlayerDied -= OnPlayerDied;
-        TapController.OnPlayerScored -= OnPlayerScored;
+        Unicorn.OnPlayerDied -= OnPlayerDied;
+        Unicorn.OnPlayerScored -= OnPlayerScored;
     }
 
     private void OnCountdownFinished() 
     {
         SetPageState(PageState.None);
-        OnGameStarted(); //event set for TapController
+        OnGameStarted(); //event set for Unicorn
         score = 0;
         gameOver = false;
     }
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
     public void ConfirmGameOver() 
     {
          //activated when replay button is hit
-         OnGameOverConfirmed(); //event set for TapController
+         OnGameOverConfirmed(); //event set for Unicorn
         scoreText.text = "0";
         SetPageState(PageState.Start);
     }

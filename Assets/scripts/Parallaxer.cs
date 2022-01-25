@@ -40,7 +40,7 @@ public class Parallaxer : MonoBehaviour
 
     private void Update() 
     {
-        if (game.GameOver) 
+        if (GameManager.Instance && GameManager.Instance.GameOver) 
         {
             return;
         }

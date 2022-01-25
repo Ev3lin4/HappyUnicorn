@@ -13,7 +13,7 @@ public class CountdownText : MonoBehaviour
 
     private void OnValidate()
     {
-        countdown ??= GetComponent<Text>();
+        countdown = countdown == null ? GetComponent<Text>() : countdown;
     }
 
     private void Start() 
@@ -23,15 +23,13 @@ public class CountdownText : MonoBehaviour
 
     private IEnumerator Countdown() 
     {
-        const int count = 3;
-
-        var yielder = new WaitForSeconds(1);
-
-        for (int i = 0; i < count; i++) 
+        int count = 0;
+        
+        for (int i = 0; i < 3; i++) 
         {
             countdown.text = (count - i).ToString();
 
-            yield return yielder;
+            yield return new WaitForSeconds(1);
         }
 
         OnCountdownFinished();
